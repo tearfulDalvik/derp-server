@@ -4,7 +4,7 @@ MAINTAINER Gufeng Shen <hey@gufeng.sh>
 
 RUN go install tailscale.com/cmd/derper@main
 
-EXPOSE 443
+EXPOSE 443 3478/udp
 
 RUN mkdir /certdir -p
 
