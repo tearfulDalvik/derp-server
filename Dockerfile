@@ -6,4 +6,6 @@ RUN go install tailscale.com/cmd/derper@main
 
 EXPOSE 443
 
-CMD ["derper", "--hostname ${HOST}"]
+RUN mkdir /certdir -p
+
+CMD ["sh", "-c", "derper -hostname ${HOST} -certdir /certdir -certmode manual -stun"]
