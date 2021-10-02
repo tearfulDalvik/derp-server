@@ -8,4 +8,4 @@ EXPOSE 443 3478/udp
 
 RUN mkdir /certdir -p
 
-CMD ["sh", "-c", "derper -hostname ${HOST} -certdir /certdir -certmode manual -stun"]
+CMD ["sh", "-c", "derper -hostname ${HOST} -certdir /certdir -certmode manual -stun | tee /derp.log"]
