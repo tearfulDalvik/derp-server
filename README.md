@@ -2,6 +2,6 @@
 
 使用该脚本部署到 k8s 和 docker 上。
 
-`docker pull https://github.com/tearfulDalvik/derp-server/pkgs/container/derp-server`
+`docker pull ghcr.io/tearfuldalvik/derp-server:main`
 
-`docker run -h HOST xxx.com -p 443:443 derp-server`
+`docker run -d --restart=always -e HOST=xxx.com -v /certdir:/certdir -p 19999:443 ghcr.io/tearfuldalvik/derp-server:main`
